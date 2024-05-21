@@ -35,10 +35,22 @@ class Solution:
                     subs.append(sub)
                 else: break
         return max([len(sub) for sub in subs])
+    
+    def isPalindrome(self,number):
+        if number < 0: return False
+        strNum=str(number)
+        result = int(strNum[::-1])
+        if(result == number):
+            return True
+        else:
+            return False
                 
+            
 solution = Solution()        
 print(solution.subsets([1,2,3]))
 print("-------------")
 print(solution.addTwoNumbers([1,2,3],[2,3,4]))
 print("-------------")
 print(solution.lengthOfLongestSubstring("pwwkew"))
+print("-------------")
+print(solution.isPalindrome(10))
