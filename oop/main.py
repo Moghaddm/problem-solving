@@ -1,4 +1,4 @@
-import Quiz
+import oop.quiz as quiz
 
-Quiz= Quiz("c# course",120)
-print(Quiz.title)
+quiz= quiz("c# course",120)
+print(quiz.title)

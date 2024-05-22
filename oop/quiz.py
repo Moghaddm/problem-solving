@@ -5,7 +5,7 @@ class Quiz:
         self.time_Limitation= time_limitation
         self.is_Running = False
     
-    _d=1
+    at = 1    
     
     def start(self):
         self.is_Running = True
@@ -24,7 +24,7 @@ class CustomQuiz(Quiz):
         
     def display(self):
         super().display()
-        print("and these are questions of that: "+", ".join(self.questions))
+        print("and these are questions of that: {}".format(", ".join(self.questions)))
         
 class AnswerSheetQuiz(Quiz):
     def __init__(self, title, time_limitation,rows) -> None:
@@ -48,7 +48,5 @@ answerSheetQuiz = AnswerSheetQuiz("python course",100,["first row","second row"]
 answerSheetQuiz.display()
 customQuiz.start()
 answerSheetQuiz.display()
-
-
-
+ 
 
