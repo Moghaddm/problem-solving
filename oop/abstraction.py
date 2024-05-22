@@ -21,9 +21,3 @@ class Teblet(Computer):
         t.sleep(1)
         self.isOn = True
         print(f"{self.name} is running now.")
-
-laptop = Laptop("mohammad laptop")
-laptop.turnOn()
-
-teblen = Teblet("mahdi tablet")
-teblen.turnOn()

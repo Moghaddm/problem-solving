@@ -1,4 +1,11 @@
-import oop.quiz as quiz
+from abstraction import *
+from quiz import *
 
-quiz= quiz("c# course",120)
+quiz= Quiz("c# course",120)
 print(quiz.title)
+
+laptop = Laptop("mohammad laptop")
+laptop.turnOn()
+
+teblen = Teblet("mahdi tablet")
+teblen.turnOn()
