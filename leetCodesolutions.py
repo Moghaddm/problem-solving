@@ -1,3 +1,4 @@
+import math
 
 class Solution:
     
@@ -44,7 +45,12 @@ class Solution:
             return True
         else:
             return False
-                
+        
+    def findMedianSortedArrays(self,nums1,nums2):
+        merged = list(nums1 + nums2)
+        merged.sort()
+        if len(merged) % 2 == 0: return (merged[int(len(merged) / 2)] +  merged[int(len(merged) / 2) - 1]) / 2
+        else: return merged[math.floor(len(merged) / 2)]
             
 solution = Solution()        
 print(solution.subsets([1,2,3]))
@@ -54,3 +60,5 @@ print("-------------")
 print(solution.lengthOfLongestSubstring("pwwkew"))
 print("-------------")
 print(solution.isPalindrome(10))
+print("-------------")
+print(solution.findMedianSortedArrays([1,2],[3,4]))
