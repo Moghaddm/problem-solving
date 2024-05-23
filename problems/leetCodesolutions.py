@@ -74,7 +74,7 @@ class Solution:
     def twoSum(self,nums,target):
         for num in nums:
             numIndex = list(nums).index(num)
-            nn = nums[numIndex +1:]
+            nn = nums[numIndex + 1:]
             for n in nn:
                 nIndex = list(nums).index(n) 
                 if n + num == target: return sorted([nIndex ,numIndex])
