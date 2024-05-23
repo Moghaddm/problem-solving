@@ -1,4 +1,5 @@
 import math
+import functools    
 
 class Solution:
     
@@ -70,7 +71,14 @@ class Solution:
         else:
             return sum
         
-            
+    def twoSum(self,nums,target):
+        for num in nums:
+            numIndex = list(nums).index(num)
+            nn = nums[numIndex +1:]
+            for n in nn:
+                nIndex = list(nums).index(n) 
+                if n + num == target: return sorted([nIndex ,numIndex])
+              
 solution = Solution()        
 print(solution.subsets([1,2,3]))
 print("-------------")
@@ -83,3 +91,5 @@ print("-------------")
 print(solution.findMedianSortedArrays([1,2],[3,4]))
 print("-------------")
 print(solution.reverse(-121))
+print("-------------")
+print(solution.twoSum([3,2,4],6))

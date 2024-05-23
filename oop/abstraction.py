@@ -9,7 +9,7 @@ class Computer(ABC):
     @abstractmethod
     def turnOn(self):
         pass
-         
+
 class Laptop(Computer):
    def turnOn(self):
        t.sleep(5)
