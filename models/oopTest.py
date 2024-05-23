@@ -1,6 +1,7 @@
-from models.quiz.quiz import *
-from models.quiz.answerSheetQuiz import *
-from models.quiz.customQuiz import *
+from answerSheetQuiz import *
+from customQuiz import *
+from laptop import *
+from tablet import *
 
 myList = ["first","second","third"]
 iter = iter(myList)
@@ -26,13 +27,13 @@ answerSheetQuiz.__title = 10
 
 print("this is another section. ------------------------")
 
-# laptop = Laptop("mohammad laptop")
-# laptop.turnOn()
+laptop = Laptop("mohammad laptop")
+laptop.turnOn()
 
-# tablet = Teblet("mahdi tablet")
-# tablet.turnOn()
+tablet = Teblet("mahdi tablet")
+tablet.turnOn()
 
-# print("this is another section. ------------------------")
+print("this is another section. ------------------------")
 
 
 

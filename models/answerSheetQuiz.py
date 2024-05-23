@@ -7,6 +7,6 @@ class AnswerSheetQuiz(Quiz):
         
     def display(self):
         print("i cant show you main info about quiz. but these are rows: "+ ", ".join(self.rows))
-        
+            
     def __repr__(self) -> str:
         return f"this is {self.title} answer sheet quiz."

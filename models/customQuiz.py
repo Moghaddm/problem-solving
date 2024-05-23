@@ -22,12 +22,3 @@ class CustomQuiz(Quiz):
         
     def __repr__(self) -> str:
         return f"this is {self.get_title()} custom quiz."
-    
-    
-    
-customQuiz = CustomQuiz("c# course",120,["first question","second question"])
-customQuiz.display()
-customQuiz.start()
-customQuiz.display()
-print(customQuiz.__repr__())
-print(f"this is time limitation of quiz: {len(customQuiz)}")
