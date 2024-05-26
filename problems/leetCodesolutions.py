@@ -78,7 +78,44 @@ class Solution:
             for n in nn:
                 nIndex = list(nums).index(n) 
                 if n + num == target: return sorted([nIndex ,numIndex])
-              
+    
+    def isValidSudoku(self,board:list):
+        for row in board:
+            rowIndex = board.index(row)
+            
+            answeredItemsRow = []
+            answeredItemsBox = []
+            
+            for col in row:
+                colIndex = list(row).index(col)
+                
+                if col != ".":
+                    answeredItemsRow.append(col)
+                
+                if colIndex + 1 % 3 == 0 and rowIndex == colIndex:
+                    answeredItemsBox.append(row[colIndex - 2:colIndex + 1])
+                    answeredItemsBox.append(board[rowIndex - 1][colIndex - 2:colIndex + 1])
+                    answeredItemsBox.append(row[rowIndex - 1][colIndex - 2:colIndex + 1])
+            
+            if len(list(set(answeredItemsRow))) != len(list(answeredItemsRow)): return False
+            
+            while "." in answeredItemsBox: answeredItemsBox.remove(".")
+            if len(set(answeredItemsBox)) != len(answeredItemsBox): return False
+            
+        answeredItemsCol = []
+        rowIndex = 0
+        colIndex = 0
+        while colIndex < 9:
+            while rowIndex < 9:
+                if board[rowIndex][colIndex] != ".":
+                    answeredItemsCol.append(board[rowIndex][colIndex])
+                rowIndex += 1
+            colIndex += 1
+                
+        if len(set(answeredItemsCol)) != len(answeredItemsCol): return False
+        
+        return True
+
 solution = Solution()        
 print(solution.subsets([1,2,3]))
 print("-------------")
@@ -93,3 +130,5 @@ print("-------------")
 print(solution.reverse(-121))
 print("-------------")
 print(solution.twoSum([3,2,4],6))
+print("-------------")
+print(solution.isValidSudoku([[".",".","4",".",".",".","6","3","."],[".",".",".",".",".",".",".",".","."],["5",".",".",".",".",".",".","9","."],[".",".",".","5","6",".",".",".","."],["4",".","3",".",".",".",".",".","1"],[".",".",".","7",".",".",".",".","."],[".",".",".","5",".",".",".",".","."],[".",".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".",".","."]]))
